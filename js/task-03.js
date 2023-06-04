@@ -16,7 +16,7 @@ const images = [
 const makeImgMarkup = (img) => {
   const { url, alt } = img;
   return `<li>
-    <img src = ${url} alt = "${alt}" width = "300px">
+    <img src = ${url} alt = "${alt}" width = "300px" height = "250px">
   </li>`;
 };
 
@@ -25,5 +25,8 @@ const listEl = document.querySelector("ul");
 const makeListMarkup = images.map(makeImgMarkup).join("");
 
 listEl.insertAdjacentHTML("afterbegin", makeListMarkup);
+listEl.style.display = "flex";
+listEl.style.gap = "15px";
+listEl.style.listStyle = "none";
 
 console.log(makeListMarkup);
