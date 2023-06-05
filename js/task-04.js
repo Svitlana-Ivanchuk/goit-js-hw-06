@@ -18,7 +18,7 @@ decrementBtnEL.addEventListener("click", handelDecrementClick);
 incrementBtnEl.addEventListener("click", handelIncrementClick);
 
 // варінт, якщо міняються будь-які змінні
-// counterValue.textContent = 0;
+// counterValue.textContent = 5;
 // decrementBtnEL.textContent = -2;
 // incrementBtnEl.textContent = 2;
 // let NumberValue = Number(counterValue.textContent);
