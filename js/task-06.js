@@ -1,7 +1,15 @@
 const textInputEl = document.querySelector("#validation-input");
-const dataLengthEl = document.querySelector('input>[data-length="6"]');
-console.log(dataLengthEl.dataset.length);
+const dataLength = Number(textInputEl.dataset.length);
 
-textInputEl.addEventListener("focus", () => {
-  textInputEl.value === dataLengthEl;
-});
+// const textInputValue = textInputEl.value.length;
+
+textInputEl.addEventListener("blur", handelInputBlur);
+
+function handelInputBlur(event) {
+  if (event.target.value.length === dataLength) {
+    textInputEl.classList.remove("invalid");
+    textInputEl.classList.add("valid");
+  }
+  textInputEl.classList.remove("valid");
+  textInputEl.classList.add("invalid");
+}

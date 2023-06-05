@@ -17,7 +17,7 @@ function handelDecrementClick() {
 decrementBtnEL.addEventListener("click", handelDecrementClick);
 incrementBtnEl.addEventListener("click", handelIncrementClick);
 
-// варінт, якщо міняються будь-які змінні
+// варіант, якщо міняються будь-які змінні
 // counterValue.textContent = 5;
 // decrementBtnEL.textContent = -2;
 // incrementBtnEl.textContent = 2;
