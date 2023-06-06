@@ -1,3 +1,8 @@
-const inputFontSize = document.querySelector("#font-size-control");
+const inputChangeSize = document.querySelector("#font-size-control");
+const textInput = document.querySelector("#text");
 
-inputFontSize.addEventListener("input", () => {});
+function handelChangeSize() {
+  textInput.style.fontSize = inputChangeSize.value + "px";
+}
+
+inputChangeSize.addEventListener("input", handelChangeSize);
