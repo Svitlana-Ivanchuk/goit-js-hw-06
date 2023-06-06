@@ -1,42 +1,29 @@
-const formEl = document.querySelector(".login-form");
-// const formInputEmail = document.querySelector("");
+const form = document.querySelector(".login-form");
 
-console.log(formEl.email);
+form.addEventListener("submit", handelFormSubmit);
 
-function handelFormSubmit() {
-  formEl.preventDefault();
-
-  const { email, password } = formEl;
-  const emailValue = email.value;
-  const passwordValue = password.value;
-  console.log(emailValue, passwordValue);
-
-  formEl.reset();
-}
-
-formEl.addEventListener("submit", handelFormSubmit);
-
-formEl.addEventListener("submit", (e) => {
-  e.preventDefault();
-
-  console.log(formInputEl.value);
-
-  formEl.reset();
-
-  formSubmitBtnEl.disabled = true;
-
-  userNameOutputEl.textContent = "";
-});
-function handleSubmit(event) {
+function handelFormSubmit(event) {
   event.preventDefault();
-  const {
-    elements: { login, password },
-  } = event.currentTarget;
 
-  if (login.value === "" || password.value === "") {
-    return console.log("Please fill in all the fields!");
+  const formElements = event.currentTarget.elements;
+
+  const emailValue = formElements.email.value;
+  const passwordValue = formElements.password.value;
+  if (emailValue === "" || passwordValue === "") {
+    alert("Всі поля повинні бути заповненні");
+  } else {
+    const formData = {
+      emailValue,
+      passwordValue,
+    };
+    console.log(formData);
   }
 
-  console.log(`Login: ${login.value}, Password: ${password.value}`);
-  event.currentTarget.reset();
+  form.reset();
 }
+
+//   const formData = new FormData(event.currentTarget);
+//   formData.forEach((value, name) => {
+//     console.log("name :", name);
+//     console.log("value :", value);
+//   });
